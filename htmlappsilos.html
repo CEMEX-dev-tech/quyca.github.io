@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUYCA🛢️</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    
+    <div class="center-container">
+        <header>
+            <img src="quyca.png" alt="Imagen de encabezado" class="header-image">
+        </header>
+        <div class="coordinates">
+            <label for="latitude">Latitud (Utiliza punto):</label>
+            <input type="text" id="latitude" placeholder="Ingresa la latitud">
+            
+            <label for="longitude">Longitud (Utiliza punto):</label>
+            <input type="text" id="longitude" placeholder="Ingresa la longitud">
+            
+            <label for="capacity">Capacidad:</label>
+            <input type="number" id="capacity" placeholder="Ingresa la capacidad">
+            
+            <button onclick="buscarSiloAdecuado()">Buscar Silo Adecuado</button>
+        </div>
+    </div>
+
+    <!-- Contenedor para el mapa (inicialmente oculto) -->
+    <div id="map-container">
+        <img src="ing.png" alt="Ingeniero" class="ingeniero-caricatura">
+        <div id="map"></div>
+   
+    </div>
+    <div id="resultado" style="text-align: center; margin-top: 20px; color: red;"></div>
+    
+    <footer>    
+        <p>&copy; CEMEX COLOMBIA S.A</p>
+    </footer>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="app.js"></script>
+   
+  
+
+</body>
+</html>

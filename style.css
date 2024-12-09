@@ -1,0 +1,176 @@
+.info-box {
+    background-color: rgba(0, 0, 179, 0.7);
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    font-family: 'Outfit', sans-serif;
+    width: 250px;
+    text-align: left;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 20px;
+    left: 60px; /* Ajusta la posición para que el cuadro quede delante del ingeniero */
+    z-index: 3; /* Asegura que esté frente al ingeniero */
+    
+}
+
+.info-box h2 {
+    margin: 0;
+    font-size: 18px;
+    color: #ffffff;
+}
+
+.info-box p {
+    margin: 5px 0;
+    font-size: 12px;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+
+#map-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+    position: relative;
+    text-align: center;
+}
+
+#map {
+    height: 500px;
+    width: 800px;
+    border-radius: 200px;
+    box-shadow: none;
+    z-index: 1; /* El mapa estará en el nivel más bajo */
+}
+
+.ingeniero-caricatura {
+    width: 150px;
+    height: auto;
+    position: absolute;
+    left: 530px; /* Ajusta este valor negativo para mover más a la izquierda */
+    bottom: 435px; /* Ajusta la posición vertical si es necesario */
+    z-index: 2; /* Aparece sobre el mapa pero debajo del cuadro de información */
+    opacity: 1; /* Transparencia para integrarse mejor */
+    display: none; /* Inicialmente oculto */
+}
+
+#map-container.active .ingeniero-caricatura {
+    display: block;
+}
+
+
+body {
+    font-family: 'Outfit', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(90deg, #f22331, #ffffff, #0000b3, #ffffff, #f22331);
+    background-size: 300% 300%;
+    animation: movimientoFondo 50s infinite linear;
+}
+
+@keyframes movimientoFondo {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+
+.header-image {
+    width: 300px; /* Ajusta el tamaño según prefieras */
+    height: auto;
+    margin-top: 60px;
+    margin-bottom: 10px;
+    filter: drop-shadow(3px 3px 10px rgba(0, 0, 0, 0.5)); /* Sombra */
+    transition: transform 0.3s ease, filter 0.3s ease; /* Transición para efectos */
+    animation: movimientoSuave 3s infinite ease-in-out;
+}
+
+.header-image:hover {
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño */
+    filter: drop-shadow(3px 3px 15px rgba(0, 0, 0, 0.7)); /* Aumenta la sombra */
+}
+
+@keyframes movimientoSuave {
+    0%, 100% {
+        transform: scale(1) translateY(0);
+    }
+    50% {
+        transform: scale(1.05) translateY(-5px);
+    }
+}
+
+.center-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 20px;
+    flex: 1; /* Permite que el contenedor central tome el espacio necesario */
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 20px; /* Añade un margen inferior para separarlo de la parte inferior de la pantalla */
+}
+
+#resultado {
+    text-align: center;
+    margin-top: 20px;
+    color: red;
+    font-weight: bold;
+}
+
+.coordinates {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    color: #ff0000;
+}
+
+.coordinates label {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.coordinates input {
+    padding: 8px;
+    margin-top: 5px;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    text-align: center;
+}
+
+button {
+    padding: 10px 20px;
+    margin-top: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #f22331;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #c81c29;
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
