@@ -224,25 +224,34 @@ button:active {
     <!-- Leaflet JS -->
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script>
-        // Datos de los silos con latitud, longitud, costo, rentabilidad y capacidad específicos
+        // Datos de los tres silos con latitud, longitud, costo, rentabilidad y capacidad específicos
         const silosData = [
     {
-       Silo_ID: 30,
-       Latitude: 3.405013335640378,      // Latitud del primer silo
-       Longitude: -76.50166233304613,    // Longitud del primer silo
-       Cost_TRANSPORTE:0.8 ,                // Costo de TRANSPORTE
-       Cost_MONTAJE:24,      
-       Profitability: 0.17,              // Rentabilidad (0 a 1)
-       Capacity: 70	                  // Capacidad en toneladas
+       Silo_ID: 161,
+       Latitude: 4.2163384845500405,      // Latitud del primer silo
+       Longitude: -73.81690961604514,    // Longitud del primer silo
+       Cost_TRANSPORTE: 9,                // Costo de TRANSPORTE
+       Cost_MONTAJE:25,      
+       Profitability: 0.26,              // Rentabilidad (0 a 1)
+       Capacity: 60                    // Capacidad en toneladas
     },
     {
-        Silo_ID: NUEVO,
-        Latitude: NUEVA LATITUD,       // Latitud del tercer silo
-        Longitude: NUEVA LONGITUD,    // Longitud del tercer silo
-        Cost_TRANSPORTE: PRONOSTICO,     // Costo de TRANSPORTE
-        Cost_MONTAJE:PRONOSTICO,        // Costo de montaje
-        Profitability: NUEVA RENTABILIDAD,   // Rentabilidad (0 a 1)
-        Capacity: NUEVA CAPACIDAD          // Capacidad en toneladas
+        Silo_ID: 161,
+        Latitude: 4.216595944961155,       // Latitud del segundo silo
+        Longitude: -73.81642344551655,    // Longitud del segundo silo
+        Cost_TRANSPORTE: 18.75,     // Costo de TRANSPORTE
+        Cost_MONTAJE:9,        // Costo de montaje   
+        Profitability: 0.0,   // Rentabilidad (0 a 1)
+        Capacity: 60           // Capacidad en toneladas
+    },
+    {
+        Silo_ID: 3,
+        Latitude: 8.426,       // Latitud del tercer silo
+        Longitude: -74.789,    // Longitud del tercer silo
+        Cost_TRANSPORTE: 20.00,     // Costo de TRANSPORTE
+        Cost_MONTAJE:9,        // Costo de montaje
+        Profitability: 0.90,   // Rentabilidad (0 a 1)
+        Capacity: 100          // Capacidad en toneladas
     }
 ];
 
@@ -280,6 +289,8 @@ function mostrarInformacionSilo(silo) {
         <h2>Silo Adecuado:</h2>
         <p><strong>ID del Silo:</strong> ${silo.Silo_ID}</p>
         <p><strong>Distancia:</strong> ${silo.Distance.toFixed(2)} KM</p>
+        <p><strong>Costo de transporte (ESTIMADO):$</strong> ${silo.Cost_TRANSPORTE.toFixed(0)} M</p>
+        <p><strong>Costo de montaje (ESTIMADO) :$</strong> ${silo.Cost_MONTAJE.toFixed(0)} M</p>
         <p><strong>Rentabilidad:</strong> ${(silo.Profitability * 100).toFixed(0)}%</p>
         <p><strong>Capacidad:</strong> ${silo.Capacity} TN</p>
         <p><strong>Relación (CDES / CDIS):</strong> ${(silo.Ratio * 100).toFixed(0)}%</p>
